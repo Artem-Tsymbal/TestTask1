@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  server:
+    container_name: server
+    restart: always
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    env_file:
+      - ./backend/.env
+    ports:
+      - 127.0.0.1:5001:5001
+
+  client:
+    container_name: client
+    restart: always
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    env_file:
+      - ./frontend/.env
+    ports:
+      - 127.0.0.1:3000:3000
+    depends_on:
+      - server
