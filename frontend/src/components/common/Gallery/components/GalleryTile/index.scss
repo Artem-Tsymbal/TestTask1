@@ -1,0 +1,22 @@
+.gallery-tile {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__thumbnail {
+    height: 150px;
+    display: block;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+}
